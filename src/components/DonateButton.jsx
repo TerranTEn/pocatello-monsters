@@ -16,8 +16,9 @@ function Donate() {
 
 const useStyles = makeStyles({
   root: {
+    maxWidth: 88,
     display: "flex",
-    alignContent: "Center",
+    justifyContent: "Center",
     padding: "0px 0.5rem",
     textDecoration: "none",
     backgroundColor: "dodgerblue",
