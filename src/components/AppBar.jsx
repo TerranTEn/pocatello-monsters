@@ -9,13 +9,10 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "@material-ui/core";
 
-import DonateButton from "./DonateButton";
 import Hamburger from "./Hamburger";
 import Menu from "./Menu";
 import textImage from "../images/icon.png";
 import { useOnClickOutside } from "../hooks";
-
-const height = "8vh";
 
 const links = [
   { text: "Home", to: "/" },
@@ -24,6 +21,7 @@ const links = [
   { text: "News", to: "#about-section" },
   { text: "Events", to: "#about-section" },
 ];
+const height = "8vh"; // locate hamburger
 
 function AppBar() {
   const theme = useTheme();
@@ -40,15 +38,17 @@ function AppBar() {
             src={textImage}
             alt="icon"
           />
-          {links.map((c) => (
-            <Link
-              className={`${classes.link} ${classes.navItem}`}
-              href={c.href}
-              to={c.to}
-            >
-              <Typography variant="h6">{c.text}</Typography>
-            </Link>
-          ))}
+          <div className={classes.linkContainer}>
+            {links.map((c) => (
+              <Link
+                className={`${classes.link} ${classes.navItem}`}
+                href={c.href}
+                to={c.to}
+              >
+                <Typography variant="h6">{c.text}</Typography>
+              </Link>
+            ))}
+          </div>
           <div ref={node}>
             <Hamburger
               open={open}
@@ -56,9 +56,6 @@ function AppBar() {
               className={`${classes.menuButton} ${classes.navItem}`}
             />
             <Menu open={open} height={height} links={links} setOpen={setOpen} />
-          </div>
-          <div className={classes.navItem}>
-            <DonateButton />
           </div>
         </Toolbar>
       </MuiAppBar>
@@ -72,15 +69,18 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     width: "100%",
+    display: "flex",
+    flexGrow: 1,
+    justifyContent: "center",
   },
   icon: {
     height: "80%",
   },
   toolbar: {
-    flexGrow: "1",
+    width: 1160,
+    margin: "auto",
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: "space-between",
     height: `${height}`,
     minHeight: "64px", // overriding mui's minHeight of 64px
     backgroundColor: (theme) => theme.palette.primary.dark,
@@ -95,12 +95,18 @@ const useStyles = makeStyles((theme) => ({
       color: (theme) => theme.palette.textPrimary.contrast,
     },
   },
+  linkContainer: {
+    display: "flex",
+    flexGrow: 1,
+    justifyContent: "flex-end",
+  },
   "@media (max-width: 768px)": {
     link: {
       display: "none",
     },
     toolbar: {
-      justifyContent: "space-evenly",
+      width: "100%",
+      justifyContent: "space-between",
     },
   },
   "@media (min-width: 769px)": {
