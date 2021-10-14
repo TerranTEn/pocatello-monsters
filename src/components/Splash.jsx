@@ -2,7 +2,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid } from "@material-ui/core";
 
 import BgImage from "../images/WestFork.jpg";
-import PRCtext from "../images/PRCtext-white.png";
 
 function Splash() {
   const classes = useStyles();
@@ -14,21 +13,16 @@ function Splash() {
       direction="column"
       alignItems="center"
     >
-      <Grid item alignContent="center">
-        <img
-          src={PRCtext}
-          className={classes.headerImage}
-          alt="Portneuf Resource Council"
-        />
+      <Grid item alignContent="center" color="textPrimary">
+        <Typography variant="h1"></Typography>
       </Grid>
       <Grid item>
         <Typography
           className={classes.smallHeader}
-          color="primary"
-          variant="h5"
+          color="textPrimary"
+          variant="h2"
         >
-          People organizing for a prosperous and healthy Southern Idaho since
-          1978
+          Be a beast and help build a climbing gym!
         </Typography>
       </Grid>
 
@@ -43,6 +37,7 @@ const useStyles = makeStyles({
     textAlign: "center",
     backgroundColor: "black",
     zIndex: -2,
+    paddingTop: "20vh",
   },
 
   headerImage: {
@@ -51,7 +46,6 @@ const useStyles = makeStyles({
   },
   smallHeader: {
     maxWidth: 480,
-    color: "white",
   },
   background: {
     backgroundImage: `url(${BgImage})`,

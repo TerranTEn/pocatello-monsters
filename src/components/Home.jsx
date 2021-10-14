@@ -1,12 +1,12 @@
 import Grid from "@material-ui/core/Grid";
 
-import Splash from "./Splash";
+import SmashSplash from "./SmashSplash";
 import About from "./About";
 
 function Home() {
   return (
     <Grid item container>
-      <Splash />
+      <SmashSplash />
       <About />
     </Grid>
   );
