@@ -7,20 +7,30 @@ function Splash() {
   const classes = useStyles();
   return (
     <Grid container item xs={12}>
-      <Grid className={classes.root} container item xs={12} spacing={5}>
+      <Grid
+        className={classes.root}
+        container
+        direction="column"
+        item
+        xs={12}
+        spacing="5"
+      >
         <Grid item xs={12}>
           <Typography
             className={classes.header}
             color="textPrimary"
-            variant="h1"
+            variant="h2"
           >
-            Pocatello Monster's Climbing Gym
+            Let's bring climbing to Pocatello!
           </Typography>
         </Grid>
+        <Grid className={classes.smallHeader} item xs={12}></Grid>
         <Grid className={classes.smallHeader} item xs={12}>
-          <Typography color="textPrimary" variant="h6">
-            Be a beast and help build a climbing gym!
-          </Typography>
+          <a color="textPrimary" href alt>
+            Pocatello Monsters' Gym is a startup to promote a healthy community
+            by opening a climbing facility. You can help us get off the ground
+            by taking the survey:
+          </a>
         </Grid>
         <Grid item xs={12}>
           <DonateButton />
@@ -32,16 +42,15 @@ function Splash() {
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 1160,
+    maxWidth: 1024,
     margin: "auto",
-    paddingTop: "10%",
-    paddingBottom: "10%",
+    padding: "11% 0",
   },
   header: {
-    maxWidth: "100%",
+    maxWidth: 550,
   },
   smallHeader: {
-    maxWidth: 480,
+    maxWidth: 500,
   },
 });
 

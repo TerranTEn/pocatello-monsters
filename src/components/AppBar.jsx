@@ -11,15 +11,15 @@ import { useTheme } from "@material-ui/core";
 
 import Hamburger from "./Hamburger";
 import Menu from "./Menu";
-import textImage from "../images/icon.png";
+import icon from "../images/icon.png";
 import { useOnClickOutside } from "../hooks";
 
 const links = [
   { text: "Home", to: "/" },
   { text: "About", to: "#about-section" },
-  { text: "Campaigns", to: "#about-section" },
+  { text: "Survey", to: "#about-section" },
   { text: "News", to: "#about-section" },
-  { text: "Events", to: "#about-section" },
+  { text: "Contact", to: "#about-section" },
 ];
 const height = "8vh"; // locate hamburger
 
@@ -33,29 +33,41 @@ function AppBar() {
     <Grid className={classes.root} item xs={12}>
       <MuiAppBar position="static">
         <Toolbar className={classes.toolbar} disableGutters>
-          <img
-            className={`${classes.icon} ${classes.navItem}`}
-            src={textImage}
-            alt="icon"
-          />
-          <div className={classes.linkContainer}>
-            {links.map((c) => (
-              <Link
-                className={`${classes.link} ${classes.navItem}`}
-                href={c.href}
-                to={c.to}
-              >
-                <Typography variant="h6">{c.text}</Typography>
-              </Link>
-            ))}
-          </div>
-          <div ref={node}>
-            <Hamburger
-              open={open}
-              setOpen={setOpen}
-              className={`${classes.menuButton} ${classes.navItem}`}
-            />
-            <Menu open={open} height={height} links={links} setOpen={setOpen} />
+          <div className={classes.content}>
+            <div className={classes.leftStuff}>
+              <img
+                className={`${classes.icon} ${classes.navItem}`}
+                src={icon}
+                alt="icon"
+              />
+              <Typography variant="h6" component="h1">
+                Pocatello Monsters' Climbing Gym
+              </Typography>
+            </div>
+            <div className={classes.rightStuff}>
+              {links.map((c) => (
+                <Link
+                  className={`${classes.link} ${classes.navItem}`}
+                  href={c.href}
+                  to={c.to}
+                >
+                  <Typography variant="h7">{c.text}</Typography>
+                </Link>
+              ))}
+              <div ref={node}>
+                <Hamburger
+                  open={open}
+                  setOpen={setOpen}
+                  className={`${classes.menuButton} ${classes.navItem}`}
+                />
+                <Menu
+                  open={open}
+                  height={height}
+                  links={links}
+                  setOpen={setOpen}
+                />
+              </div>
+            </div>
           </div>
         </Toolbar>
       </MuiAppBar>
@@ -69,24 +81,36 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     width: "100%",
-    display: "flex",
-    flexGrow: 1,
-    justifyContent: "center",
-  },
-  icon: {
-    height: "80%",
   },
   toolbar: {
+    display: "flex",
+    height: `${height}`,
+    minHeight: `${height}`, // overriding mui's minHeight of 64px
+    backgroundColor: (theme) => theme.palette.primary.dark,
+  },
+  content: {
     width: 1160,
+    height: "100%",
     margin: "auto",
     display: "flex",
     justifyContent: "space-between",
-    height: `${height}`,
-    minHeight: "64px", // overriding mui's minHeight of 64px
-    backgroundColor: (theme) => theme.palette.primary.dark,
+    alignContent: "center",
+    padding: "10 5",
+  },
+  leftStuff: {
+    display: "flex",
+    alignItems: "center",
+    width: "50%",
+  },
+  rightStuff: {
+    display: "flex",
+    alignItems: "center",
+  },
+  icon: {
+    height: "65%",
   },
   navItem: {
-    padding: "0 20px",
+    padding: "0 15px",
   },
   link: {
     textDecoration: "none",
@@ -95,21 +119,23 @@ const useStyles = makeStyles((theme) => ({
       color: (theme) => theme.palette.textPrimary.contrast,
     },
   },
-  linkContainer: {
-    display: "flex",
-    flexGrow: 1,
-    justifyContent: "flex-end",
+  "@media (max-width: 1160px)": {
+    content: {
+      width: "100%",
+    },
   },
-  "@media (max-width: 768px)": {
+  "@media (max-width: 800px)": {
     link: {
       display: "none",
     },
-    toolbar: {
+    content: {
       width: "100%",
-      justifyContent: "space-between",
+    },
+    leftStuff: {
+      width: "80%",
     },
   },
-  "@media (min-width: 769px)": {
+  "@media (min-width: 800px)": {
     menuButton: {
       display: "none",
     },

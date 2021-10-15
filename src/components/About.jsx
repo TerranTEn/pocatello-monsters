@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
   //   backgroundColor: (theme) => theme.palette.primary.light,
   // },
   about: {
-    maxWidth: 1160,
+    maxWidth: 1024,
     margin: "auto",
   },
 }));
