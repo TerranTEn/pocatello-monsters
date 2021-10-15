@@ -1,43 +1,28 @@
 import { Grid, makeStyles, useTheme } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 
-import Download from "./Download";
 import MoshCard from "./MoshCard";
-import MoshImage1 from "../images/MoshCard1.png";
-import MoshImage2 from "../images/MoshCard2.png";
+import GravityNiagra from "../images/Gravity-Niagara-1200x675.jpg";
+import BoulderWorldCup from "../images/Boulder_Worldcup_2017_Munich_9169.jpg";
 
 const cardInfo = [
   {
-    title: "Super Easy to Use",
+    title: "Our Vision",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam obcaecati vel ad unde est illo at. Labore excepturi officia dolores!",
-    image: MoshImage1,
-    alt: "easy",
+      "Rock climbing is exploding in popularity. Our goal is to spread some of the climbing hype to Pocatello by creating a community powered rock climbing gym.",
+    image: BoulderWorldCup,
+    alt: "Gravity Niagra Climbing Gym",
     orientationLeft: false,
+    text: "Learn More",
   },
   {
-    title: "Simply Fast Websites",
+    title: "Current Progress",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam obcaecati vel ad unde est illo at. Labore excepturi officia dolores!",
-    image: MoshImage2,
-    alt: "",
+      "This project is in the preliminary stages. We are currently collecting survey results to guage community interest and determine project feasability. Show your support by taking the survey",
+    image: GravityNiagra,
+    alt: "Gravity Niagra Climbing Gym",
     orientationLeft: true,
-  },
-  {
-    title: "Wordpress Made Easy",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam obcaecati vel ad unde est illo at. Labore excepturi officia dolores!",
-    image: MoshImage1,
-    alt: "",
-    orientationLeft: false,
-  },
-  {
-    title: "24/7 Expert Support",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam obcaecati vel ad unde est illo at. Labore excepturi officia dolores!",
-    image: MoshImage2,
-    alt: "",
-    orientationLeft: true,
+    text: "Take the survey",
   },
 ];
 
@@ -45,7 +30,7 @@ function About() {
   const theme = useTheme();
   const classes = useStyles(theme);
   return (
-    <Grid container item xs={12} id="about-section" className={classes.root}>
+    <Grid container item xs={12} id="about-section">
       <Grid className={classes.about} container item xs={12} spacing={5}>
         <Grid item xs={12}>
           <Typography variant="h2" color="textPrimary">
@@ -62,18 +47,12 @@ function About() {
             textColor={c.color}
           />
         ))}
-        <Grid item xs={12}>
-          <Download prompt="Free Download:" />
-        </Grid>
       </Grid>
     </Grid>
   );
 }
 
 const useStyles = makeStyles((theme) => ({
-  // root: {
-  //   backgroundColor: (theme) => theme.palette.primary.light,
-  // },
   about: {
     maxWidth: 1024,
     margin: "auto",

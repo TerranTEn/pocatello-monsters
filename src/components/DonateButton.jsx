@@ -2,13 +2,13 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-function Donate() {
+function Button({ buttonText }) {
   const classes = useStyles();
 
   return (
     <Link className={classes.root} to="donate" alt="Donate">
       <Typography className={classes.text} variant="h6">
-        Donate
+        {buttonText}
       </Typography>
     </Link>
   );
@@ -16,10 +16,9 @@ function Donate() {
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 88,
-    display: "flex",
+    display: "inline-block",
     justifyContent: "Center",
-    padding: "0px 0.5rem",
+    padding: "0 0.5rem",
     textDecoration: "none",
     backgroundColor: "dodgerblue",
     borderRadius: "2em",
@@ -33,4 +32,4 @@ const useStyles = makeStyles({
   },
 });
 
-export default Donate;
+export default Button;

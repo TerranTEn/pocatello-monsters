@@ -40,8 +40,15 @@ function AppBar() {
                 src={icon}
                 alt="icon"
               />
-              <Typography variant="h6" component="h1">
-                Pocatello Monsters' Climbing Gym
+              <Typography variant="h4" component="h1">
+                GRAVITY
+              </Typography>
+              <Typography
+                variant="h6"
+                component="h2"
+                className={`${classes.link} ${classes.navItem}`}
+              >
+                Indoor gym climbing
               </Typography>
             </div>
             <div className={classes.rightStuff}>

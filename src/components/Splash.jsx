@@ -26,7 +26,7 @@ function Splash() {
         </Typography>
       </Grid>
 
-      <div className={classes.background}></div>
+      <div className={classes.background} />
     </Grid>
   );
 }

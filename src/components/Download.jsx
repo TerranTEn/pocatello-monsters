@@ -19,13 +19,13 @@ function Download(props) {
           onClick={() => redirect("https://www.apple.com/app-store/")}
           variant="outlined"
         >
-          App Store
+          Take the Survey
         </Button>
         <Button
           onClick={() => redirect("https://play.google.com/store")}
           variant="outlined"
         >
-          Play Store
+          Become a sponsor
         </Button>
       </div>
     </Grid>

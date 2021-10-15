@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid } from "@material-ui/core";
 
-import DonateButton from "./DonateButton";
+import Download from "./Download";
 
 function Splash() {
   const classes = useStyles();
@@ -13,28 +13,26 @@ function Splash() {
         direction="column"
         item
         xs={12}
-        spacing="5"
+        spacing={7}
       >
-        <Grid item xs={12}>
+        <div className={classes.background} />
+        <Grid item xs={12} m={8}>
           <Typography
             className={classes.header}
             color="textPrimary"
-            variant="h2"
+            variant="h1"
           >
-            Let's bring climbing to Pocatello!
+            Bringing gym climbing to Pocatello
           </Typography>
         </Grid>
         <Grid className={classes.smallHeader} item xs={12}></Grid>
-        <Grid className={classes.smallHeader} item xs={12}>
-          <a color="textPrimary" href alt>
-            Pocatello Monsters' Gym is a startup to promote a healthy community
-            by opening a climbing facility. You can help us get off the ground
-            by taking the survey:
-          </a>
+        <Grid className={classes.smallHeader} item xs={10} m={6}>
+          <Typography variant="h4" color="textPrimary">
+            GRAVITY is a community-powered startup to promote a healthy
+            community and active lifestyle.
+          </Typography>
         </Grid>
-        <Grid item xs={12}>
-          <DonateButton />
-        </Grid>
+        <Download prompt="Help make this dream a reality!" />
       </Grid>
     </Grid>
   );
@@ -44,13 +42,7 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 1024,
     margin: "auto",
-    padding: "11% 0",
-  },
-  header: {
-    maxWidth: 550,
-  },
-  smallHeader: {
-    maxWidth: 500,
+    padding: "13% 0 8% 0",
   },
 });
 
