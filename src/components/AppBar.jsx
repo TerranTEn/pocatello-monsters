@@ -35,7 +35,7 @@ function AppBar() {
           <div className={classes.content}>
             <div className={classes.leftStuff}>
               <img
-                className={`${classes.icon} ${classes.navItem}`}
+                className={`${classes.icon} ${classes.image}`}
                 src={icon}
                 alt="icon"
               />
@@ -64,7 +64,7 @@ function AppBar() {
                 <Hamburger
                   open={open}
                   setOpen={setOpen}
-                  className={`${classes.menuButton} ${classes.navItem}`}
+                  className={`${classes.menuButton} ${classes.image}`}
                 />
                 <Menu
                   open={open}
@@ -117,6 +117,9 @@ const useStyles = makeStyles((theme) => ({
     height: "90%",
   },
   navItem: {
+    padding: "0 15px",
+  },
+  image: {
     padding: "0 15px",
   },
   link: {
