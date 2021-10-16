@@ -1,7 +1,7 @@
 import { Grid, makeStyles, useTheme } from "@material-ui/core";
 
 import MoshCard from "./MoshCard";
-import GravityNiagra from "../images/Gravity-Niagara-1200x675.jpg";
+import IconR1 from "../images/iconR1.png";
 import BoulderWorldCup from "../images/Boulder_Worldcup_2017_Munich_9169.jpg";
 import Survey from "./SurveyButton";
 
@@ -19,7 +19,7 @@ const cardInfo = [
     title: "Current Progress",
     description:
       "This project is in the preliminary stages. We are currently collecting survey results to guage community interest and determine project feasability. You can help us by taking a quick survey.",
-    image: GravityNiagra,
+    image: IconR1,
     alt: "Gravity Niagra Climbing Gym",
     orientationLeft: true,
     text: "Take the survey",
