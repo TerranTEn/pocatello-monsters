@@ -45,7 +45,7 @@ function AppBar() {
               <Typography
                 variant="h6"
                 component="h2"
-                className={`${classes.link} ${classes.navItem}`}
+                className={classes.navItem}
               >
                 Indoor gym climbing
               </Typography>
@@ -133,6 +133,9 @@ const useStyles = makeStyles((theme) => ({
   },
   "@media (max-width: 800px)": {
     link: {
+      display: "none",
+    },
+    navItem: {
       display: "none",
     },
     content: {
