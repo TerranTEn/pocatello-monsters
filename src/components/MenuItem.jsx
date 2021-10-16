@@ -9,7 +9,7 @@ function MenuItem(props) {
       href={props.href}
       onClick={() => props.setOpen()}
     >
-      <Typography variant="h4" color="Primary">
+      <Typography variant="h4" color="primary">
         {props.text}
       </Typography>
     </a>

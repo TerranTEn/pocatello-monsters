@@ -51,12 +51,13 @@ function AppBar() {
               </Typography>
             </div>
             <div className={classes.rightStuff}>
-              {links.map((c) => (
+              {links.map((l, k) => (
                 <a
+                  key={k}
                   className={`${classes.link} ${classes.navItem}`}
-                  href={c.href}
+                  href={l.href}
                 >
-                  <Typography variant="h7">{c.text}</Typography>
+                  <Typography variant="body1">{l.text}</Typography>
                 </a>
               ))}
               <div ref={node}>

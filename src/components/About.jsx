@@ -33,8 +33,9 @@ function About() {
   return (
     <Grid container item xs={12} id="about-section">
       <Grid className={classes.about} container item xs={12} spacing={8}>
-        {cardInfo.map((c) => (
+        {cardInfo.map((c, k) => (
           <MoshCard
+            key={k}
             title={c.title}
             description={c.description}
             image={c.image}

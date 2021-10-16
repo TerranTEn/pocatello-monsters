@@ -6,8 +6,8 @@ function Menu(props) {
   const classes = useStyles(props);
   return (
     <div className={classes.Menu}>
-      {props.links.map((c) => (
-        <MenuItem text={c.text} href={c.href} setOpen={props.setOpen} />
+      {props.links.map((c, k) => (
+        <MenuItem key={k} text={c.text} href={c.href} setOpen={props.setOpen} />
       ))}
     </div>
   );
