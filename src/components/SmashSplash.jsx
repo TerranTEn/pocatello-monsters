@@ -1,48 +1,54 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid } from "@material-ui/core";
 
-import Download from "./Download";
+import ColorButton from "./ColorButton";
 
 function Splash() {
   const classes = useStyles();
   return (
-    <Grid container item xs={12}>
+    <Grid container item xs={12} id="home-section">
       <Grid
         className={classes.root}
         container
         direction="column"
         item
         xs={12}
-        spacing={7}
+        spacing={4}
       >
-        <div className={classes.background} />
-        <Grid item xs={12} m={8}>
-          <Typography
-            className={classes.header}
-            color="textPrimary"
-            variant="h1"
-          >
-            Bringing gym climbing to Pocatello
+        <Grid item xs={12} className={classes.header}>
+          <Typography color="textPrimary" variant="h1">
+            Bringing gym climbing to Pocatello.
           </Typography>
         </Grid>
-        <Grid className={classes.smallHeader} item xs={12}></Grid>
-        <Grid className={classes.smallHeader} item xs={10} m={6}>
+        <Grid item xs={10} lg={8}>
           <Typography variant="h4" color="textPrimary">
-            GRAVITY is a community-powered startup to promote a healthy
-            community and active lifestyle.
+            Help us make the dream a reality by taking a quick survey:
           </Typography>
         </Grid>
-        <Download prompt="Help make this dream a reality!" />
+        <Grid item>
+          <ColorButton
+            buttonText="Click here to take the survey"
+            href="https://www.surveymonkey.com/r/TJP3SK8"
+            alt="Click here to take the survey"
+          />
+        </Grid>
       </Grid>
     </Grid>
   );
 }
-
 const useStyles = makeStyles({
   root: {
     maxWidth: 1024,
     margin: "auto",
-    padding: "13% 0 8% 0",
+    padding: "12% 0 5% 0",
+  },
+  header: {
+    marginBottom: "69px",
+  },
+  "@media (max-width: 800px)": {
+    root: {
+      padding: "25% 0 5% 0",
+    },
   },
 });
 

@@ -7,7 +7,7 @@ function Footer(props) {
       <Grid item xs={12} className={classes.root}>
         <Button>Copyright</Button>
         <Button>Privacy</Button>
-        <Button>Contact</Button>
+        <Button href="mailto:terran.engle@gmail.com">Contact</Button>
       </Grid>
     </Grid>
   );

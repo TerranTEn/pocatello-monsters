@@ -1,30 +1,29 @@
-import { Typography, makeStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Typography, makeStyles, useTheme } from "@material-ui/core";
 
 function MenuItem(props) {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme);
   return (
-    <Link
+    <a
       className={classes.root}
-      to={props.to}
       href={props.href}
       onClick={() => props.setOpen()}
     >
       <Typography variant="h4" color="Primary">
         {props.text}
       </Typography>
-    </Link>
+    </a>
   );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     width: "100%",
     padding: "0.75rem 2rem",
     textDecoration: "none",
     backgroundColor: "dodgerBlue",
+    border: "solid #212121 1px",
   },
-});
-
+}));
 export default MenuItem;

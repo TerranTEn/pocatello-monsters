@@ -1,14 +1,13 @@
 import { Typography, Grid, makeStyles } from "@material-ui/core";
 
-import DonateButton from "./DonateButton";
-
 function MoshCard({
   orientationLeft,
   title,
   description,
   image,
   alt,
-  buttonText,
+
+  id,
 }) {
   const classes = useStyles();
 
@@ -20,19 +19,18 @@ function MoshCard({
       xs={12}
       direction={orientationLeft ? "row" : "row-reverse"}
     >
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} sm={6} id={id}>
         <Typography
           className={classes.title}
-          variant="h4"
+          variant="h2"
           component="h3"
           color="textPrimary"
         >
           {title}
         </Typography>
-        <Typography className={classes.body} variant="body1">
+        <Typography className={classes.body} variant="h5">
           {description}
         </Typography>
-        <DonateButton buttonText={buttonText} />
       </Grid>
       <Grid item xs={12} sm={6}>
         <img className={classes.image} src={image} alt={alt} />

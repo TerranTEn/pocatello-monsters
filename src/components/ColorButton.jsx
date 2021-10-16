@@ -1,35 +1,31 @@
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
 
-function Button({ buttonText }) {
+function ColorButton({ buttonText, href, alt }) {
   const classes = useStyles();
-
   return (
-    <Link className={classes.root} to="donate" alt="Donate">
-      <Typography className={classes.text} variant="h6">
+    <a className={classes.root} href={href} alt={alt}>
+      <Typography className={classes.text} variant="h6" color="primary">
         {buttonText}
       </Typography>
-    </Link>
+    </a>
   );
 }
 
 const useStyles = makeStyles({
   root: {
     display: "inline-block",
-    justifyContent: "Center",
     padding: "0 0.5rem",
     textDecoration: "none",
-    backgroundColor: "dodgerblue",
+    backgroundColor: "#39B54A",
     borderRadius: "2em",
     "&:hover": {
-      backgroundColor: "lightskyblue",
+      backgroundColor: "#8DC63F",
     },
   },
   text: {
     padding: "0.5rem",
-    color: "black",
   },
 });
 
-export default Button;
+export default ColorButton;

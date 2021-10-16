@@ -6,22 +6,21 @@ import {
   Typography,
 } from "@material-ui/core";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { useTheme } from "@material-ui/core";
 
 import Hamburger from "./Hamburger";
 import Menu from "./Menu";
-import icon from "../images/icon.png";
+import icon from "../images/iconR2.png";
 import { useOnClickOutside } from "../hooks";
 
 const links = [
-  { text: "Home", to: "/" },
-  { text: "About", to: "#about-section" },
-  { text: "Survey", to: "#about-section" },
-  { text: "News", to: "#about-section" },
-  { text: "Contact", to: "#about-section" },
+  { text: "Home", href: "#home-section" },
+  { text: "About", href: "#about-section" },
+  { text: "Survey", href: "https://www.surveymonkey.com/r/TJP3SK8" },
+  { text: "News", href: "#news-section" },
+  { text: "Contact", href: "mailto:terran.engle@gmail.com" },
 ];
-const height = "8vh"; // locate hamburger
+const height = "96px"; // locate hamburger
 
 function AppBar() {
   const theme = useTheme();
@@ -53,13 +52,12 @@ function AppBar() {
             </div>
             <div className={classes.rightStuff}>
               {links.map((c) => (
-                <Link
+                <a
                   className={`${classes.link} ${classes.navItem}`}
                   href={c.href}
-                  to={c.to}
                 >
                   <Typography variant="h7">{c.text}</Typography>
-                </Link>
+                </a>
               ))}
               <div ref={node}>
                 <Hamburger
@@ -88,11 +86,12 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     width: "100%",
+    zIndex: 10,
   },
   toolbar: {
     display: "flex",
     height: `${height}`,
-    minHeight: `${height}`, // overriding mui's minHeight of 64px
+    minHeight: "96px", // overriding mui's minHeight of 64px
     backgroundColor: (theme) => theme.palette.primary.dark,
   },
   content: {
@@ -114,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   icon: {
-    height: "65%",
+    height: "90%",
   },
   navItem: {
     padding: "0 15px",

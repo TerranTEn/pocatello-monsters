@@ -7,12 +7,7 @@ function Menu(props) {
   return (
     <div className={classes.Menu}>
       {props.links.map((c) => (
-        <MenuItem
-          text={c.text}
-          to={c.to}
-          href={c.href}
-          setOpen={props.setOpen}
-        />
+        <MenuItem text={c.text} href={c.href} setOpen={props.setOpen} />
       ))}
     </div>
   );
