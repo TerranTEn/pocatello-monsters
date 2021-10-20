@@ -22,7 +22,7 @@ function Splash() {
         </Grid>
         <Grid item xs={10} lg={8}>
           <Typography variant="h4" color="textPrimary">
-            Help us make the dream a reality by taking a quick survey:
+            Help make the dream a reality by taking a quick survey:
           </Typography>
         </Grid>
         <Grid item>
