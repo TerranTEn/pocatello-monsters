@@ -1,72 +1,53 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid } from "@material-ui/core";
 
-import BgImage from "../images/WestFork.jpg";
+import ColorButton from "./ColorButton";
 
 function Splash() {
   const classes = useStyles();
   return (
-    <Grid
-      item
-      container
-      className={classes.root}
-      direction="column"
-      alignItems="center"
-    >
-      <Grid item alignContent="center" color="textPrimary">
-        <Typography variant="h1"></Typography>
+    <Grid container item xs={12} id="home-section">
+      <Grid
+        className={classes.root}
+        container
+        direction="column"
+        item
+        xs={12}
+        spacing={4}
+      >
+        <Grid item xs={12} className={classes.header}>
+          <Typography color="textPrimary" variant="h1">
+            Bringing gym climbing to Pocatello.
+          </Typography>
+        </Grid>
+        <Grid item xs={10} lg={8}>
+          <Typography variant="h4" color="textPrimary">
+            Help us make the dream a reality by taking a quick survey:
+          </Typography>
+        </Grid>
+        <Grid item>
+          <ColorButton
+            buttonText="Click here to take the survey"
+            href="https://www.surveymonkey.com/r/TJP3SK8"
+            alt="Click here to take the survey"
+          />
+        </Grid>
       </Grid>
-      <Grid item>
-        <Typography
-          className={classes.smallHeader}
-          color="textPrimary"
-          variant="h2"
-        >
-          Be a beast and help build a climbing gym!
-        </Typography>
-      </Grid>
-
-      <div className={classes.background} />
     </Grid>
   );
 }
-
 const useStyles = makeStyles({
   root: {
-    minHeight: "100vh",
-    textAlign: "center",
-    backgroundColor: "black",
-    zIndex: -2,
-    paddingTop: "20vh",
+    maxWidth: 1024,
+    margin: "auto",
+    padding: "13% 0 5% 0",
   },
-
-  headerImage: {
-    maxHeight: "25vh",
-    padding: "32vh 0px 7vh 0px",
+  header: {
+    marginBottom: "69px",
   },
-  smallHeader: {
-    maxWidth: 480,
-  },
-  background: {
-    backgroundImage: `url(${BgImage})`,
-    opacity: 0.6,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    zIndex: -1,
-    position: "absolute",
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-  },
-  "@media (min-width: 769px)": {
-    background: {
-      backgroundAttachment: "fixed",
-    },
-  },
-  "@media (max-width: 768px)": {
-    background: {
-      backgroundAttachment: "scroll",
+  "@media (max-width: 800px)": {
+    root: {
+      padding: "25% 0 5% 0",
     },
   },
 });

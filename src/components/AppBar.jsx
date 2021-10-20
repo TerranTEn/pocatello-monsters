@@ -45,7 +45,7 @@ function AppBar() {
               <Typography
                 variant="h6"
                 component="h2"
-                className={classes.navItem}
+                className={`${classes.navItem} ${classes.subHeader}`}
               >
                 Indoor gym climbing
               </Typography>
@@ -124,6 +124,7 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     textDecoration: "none",
+    display: "inline-block",
     color: (theme) => theme.palette.textPrimary.light,
     "&:hover": {
       color: (theme) => theme.palette.textPrimary.contrast,
@@ -134,7 +135,7 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
     },
   },
-  "@media (max-width: 800px)": {
+  "@media (max-width: 810px)": {
     link: {
       display: "none",
     },
@@ -148,8 +149,13 @@ const useStyles = makeStyles((theme) => ({
       width: "80%",
     },
   },
-  "@media (min-width: 800px)": {
+  "@media (min-width: 811px)": {
     menuButton: {
+      display: "none",
+    },
+  },
+  "@media (max-width: 910px)": {
+    subHeader: {
       display: "none",
     },
   },

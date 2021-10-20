@@ -9,20 +9,18 @@ const cardInfo = [
   {
     title: "Our Vision",
     description:
-      "Rock climbing is exploding in popularity around the world. Our goal is to spread the climbing hype to Pocatello by creating a community powered rock climbing gym by 2023.",
+      "Climbing is exploding in popularity around the world. Our goal is to bring a modern climbing facility that meets the needs of our entire community by 2023. Pocatello is ready to send!",
     image: BoulderWorldCup,
-    alt: "Gravity Niagra Climbing Gym",
+    alt: "Bouldering world cup, Munich, 2017",
     orientationLeft: false,
-    text: "Learn More",
   },
   {
     title: "Current Progress",
     description:
-      "This project is in the preliminary stages. We are currently collecting survey results to guage community interest and determine project feasability. You can help us by taking a quick survey.",
+      "We're getting started by collecting survey results to determine the factors for success and project feasability. Help us out by taking a quick survey and sharing this page on social media.",
     image: IconR1,
-    alt: "Gravity Niagra Climbing Gym",
+    alt: "Gravity Pocatello Logo",
     orientationLeft: true,
-    text: "Take the survey",
     id: "news-section",
   },
 ];
@@ -31,22 +29,27 @@ function About() {
   const theme = useTheme();
   const classes = useStyles(theme);
   return (
-    <Grid container item xs={12} id="about-section">
-      <Grid className={classes.about} container item xs={12} spacing={8}>
-        {cardInfo.map((c, k) => (
-          <MoshCard
-            key={k}
-            title={c.title}
-            description={c.description}
-            image={c.image}
-            alt={c.alt}
-            orientationLeft={c.orientationLeft}
-            textColor={c.color}
-            id={c.id}
-          />
-        ))}
-        <Survey />
-      </Grid>
+    <Grid
+      id="about-section"
+      className={classes.about}
+      container
+      item
+      xs={12}
+      spacing={8}
+    >
+      {cardInfo.map((c, k) => (
+        <MoshCard
+          key={k}
+          title={c.title}
+          description={c.description}
+          image={c.image}
+          alt={c.alt}
+          orientationLeft={c.orientationLeft}
+          textColor={c.color}
+          id={c.id}
+        />
+      ))}
+      <Survey />
     </Grid>
   );
 }

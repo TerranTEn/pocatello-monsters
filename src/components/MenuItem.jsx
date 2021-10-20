@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "0.75rem 2rem",
     textDecoration: "none",
     backgroundColor: "dodgerBlue",
-    border: "solid #212121 1px",
+    borderBottom: "solid #212121 2px",
   },
 }));
 export default MenuItem;

@@ -42,18 +42,12 @@ function MoshCard({
 const useStyles = makeStyles({
   image: {
     width: "100%",
-    height: "16rem",
+    height: "18rem",
     borderRadius: "20px",
     objectFit: "cover",
   },
   title: {
-    margin: "1rem 0",
-  },
-  body: {
-    marginBottom: "1.5rem",
-  },
-  button: {
-    zIndex: -1,
+    margin: ".25rem 0",
   },
 });
 
