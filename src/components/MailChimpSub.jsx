@@ -17,15 +17,15 @@ function CustomForm(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    email &&
-      firstName &&
-      lastName &&
-      email.indexOf("@") > -1 &&
-      props.subscribe({
-        MERGE0: email,
-        MERGE1: firstName,
-        MERGE2: lastName,
-      });
+    // email &&
+    //   firstName &&
+    //   lastName &&
+    //   email.indexOf("@") > -1 &&
+    props.subscribe({
+      MERGE0: email,
+      MERGE1: firstName,
+      MERGE2: lastName,
+    });
   }
 
   useEffect(() => {
@@ -126,7 +126,7 @@ function MailchimpSub() {
   );
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles({
   root: {
     padding: "15px 30px",
     backgroundColor: "#39B54A",
@@ -145,6 +145,6 @@ const useStyles = makeStyles(() => ({
     margin: "auto",
     padding: "4px 0 10px 0",
   },
-}));
+});
 
 export default MailchimpSub;
