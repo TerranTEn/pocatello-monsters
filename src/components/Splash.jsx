@@ -13,7 +13,7 @@ function Splash() {
         direction="column"
         item
         xs={12}
-        spacing={4}
+        spacing={6}
       >
         <Grid item xs={12} className={classes.header}>
           <Typography color="textPrimary" variant="h1">

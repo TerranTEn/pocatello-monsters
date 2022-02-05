@@ -6,7 +6,7 @@ import {
   Typography,
   Grid,
 } from "@material-ui/core";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 function CustomForm(props) {
   const classes = useStyles();

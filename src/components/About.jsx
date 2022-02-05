@@ -3,7 +3,6 @@ import { Grid, makeStyles, useTheme } from "@material-ui/core";
 import MoshCard from "./MoshCard";
 import IconR1 from "../images/iconR1.png";
 import BoulderWorldCup from "../images/Boulder_Worldcup_2017_Munich_9169.jpg";
-import Survey from "./SurveyButton";
 
 const cardInfo = [
   {
@@ -17,7 +16,7 @@ const cardInfo = [
   {
     title: "Current Progress",
     description:
-      "We're just getting started by collecting survey results to determine the factors for success and project feasability. Help us out by taking a quick survey and sharing this page on social media.",
+      "We're getting this project kicked off by conducting a survey to determine key factors for success and project feasability. Help us out by taking a quick survey and sharing this page on social media.",
     image: IconR1,
     alt: "Gravity Pocatello Logo",
     orientationLeft: true,
@@ -29,27 +28,27 @@ function About() {
   const theme = useTheme();
   const classes = useStyles(theme);
   return (
-    <Grid
-      id="about-section"
-      className={classes.about}
-      container
-      item
-      xs={12}
-      spacing={8}
-    >
-      {cardInfo.map((c, k) => (
-        <MoshCard
-          key={k}
-          title={c.title}
-          description={c.description}
-          image={c.image}
-          alt={c.alt}
-          orientationLeft={c.orientationLeft}
-          textColor={c.color}
-          id={c.id}
-        />
-      ))}
-      <Survey />
+    <Grid id="about-section" container item xs={12}>
+      <Grid
+        item
+        container
+        className={classes.about}
+        direction="column"
+        spacing={6}
+      >
+        {cardInfo.map((c, k) => (
+          <MoshCard
+            key={k}
+            title={c.title}
+            description={c.description}
+            image={c.image}
+            alt={c.alt}
+            orientationLeft={c.orientationLeft}
+            textColor={c.color}
+            id={c.id}
+          />
+        ))}
+      </Grid>
     </Grid>
   );
 }
@@ -58,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   about: {
     maxWidth: 1024,
     margin: "auto",
-    paddingTop: "3rem",
+    padding: "5% 0 5% 0",
   },
 }));
 
