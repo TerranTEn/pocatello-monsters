@@ -19,6 +19,7 @@ const links = [
   { text: "Survey", href: "https://www.surveymonkey.com/r/TJP3SK8" },
   { text: "News", href: "#news-section" },
   { text: "Contact", href: "mailto:terran.engle@gmail.com" },
+  { text: "Subscribe", href: "#subscribe-section" },
 ];
 const height = "96px"; // locate hamburger
 
@@ -44,10 +45,10 @@ function AppBar() {
               </Typography>
               <Typography
                 variant="h6"
-                component="h2"
+                component="h1"
                 className={`${classes.navItem} ${classes.subHeader}`}
               >
-                Indoor gym climbing
+                Indoor Gym Climbing
               </Typography>
             </div>
             <div className={classes.rightStuff}>
@@ -107,14 +108,15 @@ const useStyles = makeStyles((theme) => ({
   leftStuff: {
     display: "flex",
     alignItems: "center",
-    width: "50%",
   },
   rightStuff: {
     display: "flex",
     alignItems: "center",
+    justifyContent: "flex-end",
+    width: "10%",
   },
   icon: {
-    height: "90%",
+    height: "82%",
   },
   navItem: {
     padding: "0 15px",
@@ -154,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  "@media (max-width: 910px)": {
+  "@media (max-width: 985px)": {
     subHeader: {
       display: "none",
     },
