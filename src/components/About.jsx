@@ -16,7 +16,7 @@ const cardInfo = [
   {
     title: "Current Progress",
     description:
-      "We're getting this project kicked off by determining community interest in the project. Help us out by taking a quick survey, subscribing to our newsletter, and sharing this page on social media!",
+      "We're getting this project kicked off by determining the community's interest in building an awesome new climbing gym. Help us out by taking a quick survey, subscribing to our newsletter, and sharing this page on social media!",
     image: IconR1,
     alt: "Gravity Pocatello Logo",
     orientationLeft: true,
