@@ -16,7 +16,10 @@ import { useOnClickOutside } from "../hooks";
 const links = [
   { text: "Home", href: "#home-section" },
   { text: "About", href: "#about-section" },
-  { text: "Survey", href: "https://www.surveymonkey.com/r/TJP3SK8" },
+  {
+    text: "Survey",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfSK1K5UO0FYEjLYdpVHxIZhsXuamSuTi__YT1B2jwnQXm2Pw/viewform?usp=sf_link",
+  },
   { text: "News", href: "#news-section" },
   { text: "Contact", href: "mailto:terran.engle@gmail.com" },
   { text: "Subscribe", href: "#subscribe-section" },

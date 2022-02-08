@@ -28,7 +28,7 @@ function Splash() {
         <Grid item>
           <ColorButton
             buttonText="Click here to take the survey"
-            href="https://www.surveymonkey.com/r/TJP3SK8"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfSK1K5UO0FYEjLYdpVHxIZhsXuamSuTi__YT1B2jwnQXm2Pw/viewform?usp=sf_link"
             alt="Click here to take the survey"
           />
         </Grid>
