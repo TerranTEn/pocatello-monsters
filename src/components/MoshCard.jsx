@@ -10,8 +10,10 @@ function MoshCard({ orientationLeft, title, description, image, alt, id }) {
       spacing={3}
       xs={12}
       direction={orientationLeft ? "row" : "row-reverse"}
+      className={classes.root}
     >
-      <Grid item xs={12} sm={6} id={id}>
+      <Grid item xs={12} sm={6}>
+        <div className={classes.appBarSpacer} id={id} />
         <Typography className={classes.title} variant="h2" color="textPrimary">
           {title}
         </Typography>
@@ -27,6 +29,10 @@ function MoshCard({ orientationLeft, title, description, image, alt, id }) {
 }
 
 const useStyles = makeStyles({
+  root: {
+    margin: "auto",
+    position: "relative",
+  },
   image: {
     width: "100%",
     height: "18rem",
@@ -35,6 +41,11 @@ const useStyles = makeStyles({
   },
   title: {
     margin: ".25rem 0",
+  },
+  appBarSpacer: {
+    position: "absolute",
+    height: "96px",
+    top: "-96px",
   },
 });
 

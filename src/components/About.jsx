@@ -12,6 +12,7 @@ const cardInfo = [
     image: BoulderWorldCup,
     alt: "Bouldering world cup, Munich, 2017",
     orientationLeft: false,
+    id: "about-section",
   },
   {
     title: "Current Progress",
@@ -28,7 +29,7 @@ function About() {
   const theme = useTheme();
   const classes = useStyles(theme);
   return (
-    <Grid id="about-section" container item xs={12}>
+    <Grid container item xs={12}>
       <Grid
         item
         container
