@@ -1,7 +1,6 @@
 import {
   Toolbar,
   AppBar as MuiAppBar,
-  Grid,
   makeStyles,
   Typography,
 } from "@material-ui/core";
@@ -14,12 +13,11 @@ import icon from "../images/iconR2.png";
 import { useOnClickOutside } from "../hooks";
 
 const links = [
-  { text: "Home", href: "#home-section" },
-  { text: "About", href: "#about-section" },
   {
     text: "Survey",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfSK1K5UO0FYEjLYdpVHxIZhsXuamSuTi__YT1B2jwnQXm2Pw/viewform?usp=sf_link",
   },
+  { text: "About", href: "#about-section" },
   { text: "News", href: "#news-section" },
   { text: "Contact", href: "mailto:terran.engle@gmail.com" },
   { text: "Subscribe", href: "#subscribe-section" },
@@ -33,67 +31,60 @@ function AppBar() {
   const [open, setOpen] = useState(false);
   useOnClickOutside(node, () => setOpen(false));
   return (
-    <Grid className={classes.root} item xs={12}>
-      <MuiAppBar position="static">
-        <Toolbar className={classes.toolbar} disableGutters>
-          <div className={classes.content}>
-            <div className={classes.leftStuff}>
-              <img
-                className={`${classes.icon} ${classes.image}`}
-                src={icon}
-                alt="icon"
-              />
+    <MuiAppBar className={classes.appBar} position="fixed">
+      <Toolbar disableGutters>
+        <div className={classes.content}>
+          <div className={classes.leftStuff}>
+            <img
+              className={`${classes.icon} ${classes.image}`}
+              src={icon}
+              alt="icon"
+            />
+            <a href="#home-section" className={classes.title}>
               <Typography variant="h4" component="h1">
                 GRAVITY
               </Typography>
-              <Typography
-                variant="h6"
-                component="h1"
-                className={`${classes.navItem} ${classes.subHeader}`}
+            </a>
+            <Typography
+              variant="h6"
+              component="h1"
+              className={`${classes.navItem} ${classes.subHeader}`}
+            >
+              Indoor Gym Climbing
+            </Typography>
+          </div>
+          <div className={classes.rightStuff}>
+            {links.map((l, k) => (
+              <a
+                key={k}
+                className={`${classes.link} ${classes.navItem}`}
+                href={l.href}
               >
-                Indoor Gym Climbing
-              </Typography>
-            </div>
-            <div className={classes.rightStuff}>
-              {links.map((l, k) => (
-                <a
-                  key={k}
-                  className={`${classes.link} ${classes.navItem}`}
-                  href={l.href}
-                >
-                  <Typography variant="body1">{l.text}</Typography>
-                </a>
-              ))}
-              <div ref={node}>
-                <Hamburger
-                  open={open}
-                  setOpen={setOpen}
-                  className={`${classes.menuButton} ${classes.image}`}
-                />
-                <Menu
-                  open={open}
-                  height={height}
-                  links={links}
-                  setOpen={setOpen}
-                />
-              </div>
+                <Typography variant="body1">{l.text}</Typography>
+              </a>
+            ))}
+            <div ref={node}>
+              <Hamburger
+                open={open}
+                setOpen={setOpen}
+                className={`${classes.menuButton} ${classes.image}`}
+              />
+              <Menu
+                open={open}
+                height={height}
+                links={links}
+                setOpen={setOpen}
+              />
             </div>
           </div>
-        </Toolbar>
-      </MuiAppBar>
-    </Grid>
+        </div>
+      </Toolbar>
+    </MuiAppBar>
   );
 }
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    zIndex: 10,
-  },
-  toolbar: {
+  appBar: {
     display: "flex",
     height: `${height}`,
     minHeight: "96px", // overriding mui's minHeight of 64px
@@ -117,6 +108,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "flex-end",
     width: "10%",
+  },
+  title: {
+    textDecoration: "none",
+    color: (theme) => theme.palette.textPrimary.light,
   },
   icon: {
     height: "82%",
