@@ -8,7 +8,7 @@ const cardInfo = [
   {
     title: "Our Vision",
     description:
-      "Climbing is exploding in popularity around the world. Our goal is to build a modern climbing facility that meets the needs of our entire community by 2023. Pocatello is ready to send!",
+      "Climbing is exploding in popularity around the world. Our goal is to build a modern climbing facility that meets the needs of our entire community. Pocatello is ready to send!",
     image: BoulderWorldCup,
     alt: "Bouldering world cup, Munich, 2017",
     orientationLeft: false,
